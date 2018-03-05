@@ -44,5 +44,5 @@ foreach my $parts (@repro) {
 }
 chop $out{update_sql};
 chop $out{update_sql};
-$out{update_sql} .= " WHERE name = \"" . encode_entities( $out{name} );
+$out{update_sql} .= " WHERE name = \"" . encode_entities( $out{name} ) . "\";";
 print to_json(\%out), "\n";
