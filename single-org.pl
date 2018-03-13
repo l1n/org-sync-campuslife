@@ -9,7 +9,8 @@ my %out = (
     name => $ARGV[1],
     src => $ARGV[0]
 );
-my @body = split /\n/, `curl -sL $ARGV[0]`;
+print STDERR "Retrieving details for $out{name} from $out{src}\n";
+my @body = split /\n/, `curl -sL $out{src}`;
 my @repro;
 my $print;
 foreach (@body) {
